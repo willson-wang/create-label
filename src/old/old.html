@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/jquery-ui-1.12.1/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="body-bg">
+    <div class="ui-label-wrap">
+        <div class="ui-label-header clearFix">
+            <form name="printlabel" method="post" id="label_form" action>
+                <div class="ui-label-header-left">
+                    <label for="">模板名称</label>
+                    <input type="text" name="name">
+                    <input type="hidden" name="specs" value>
+                    <input type="hidden" name="template_type" value>
+                    <input type="hidden" name="bill_type" value>
+                    <input type="hidden" name="template_id" value>
+                    <input type="hidden" name="html_string" value>
+                    <span>单据类别 <strong class="bill-type"></strong></span>
+                    <span>规格 <strong class="specs"></strong></span>
+                </div>
+                <div class="ui-label-header-right">
+                    <a class="ui-lable-printView "><i class="fa fa-print fa-t" aria-hidden="true"></i>打印预览</a>
+                    <a class="ui-lable-clearInnerHtml"><i class="fa fa-trash-o fa-t" aria-hidden="true"></i>清空画布</a>
+                    <a class="ui-lable-saveInnerHtml"><i class="fa fa-floppy-o fa-t" aria-hidden="true"></i>保存模板</a>
+                    <a class="ui-lable-saveAndClose print-active-yellow"><i class="fa fa-floppy-o fa-t"
+                            aria-hidden="true"></i>保存并关闭</a>
+                </div>
+            </form>
+        </div>
+        <div class="ui-label-content clearFix">
+            <div class="ui-label-content-left">
+                <ul>
+                    <li><span class="ui-label-content-title"><i class="fa fa-chevron-down f-ip"
+                                aria-hidden="true"></i>发件人信息</span>
+                        <ul class="ui-label-content-menu">
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>发件人</strong>
+                                    <span class="ui-label-detail-info-decs">wangks</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>发件人电话</strong>
+                                    <span class="ui-label-detail-info-decs">13510228181</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>发件人手机</strong>
+                                    <span class="ui-label-detail-info-decs">13510228181</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>发件人邮件</strong>
+                                    <span class="ui-label-detail-info-decs">wangkangsen168@163.com</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>发件人传真</strong>
+                                    <span class="ui-label-detail-info-decs">070-515635</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>发件人国家</strong>
+                                    <span class="ui-label-detail-info-decs">China</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>发件人国家英文缩写</strong>
+                                    <span class="ui-label-detail-info-decs">CN</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>发件人省份</strong>
+                                    <span class="ui-label-detail-info-decs">Shen zhen</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>发件人城市</strong>
+                                    <span class="ui-label-detail-info-decs">Shen zhen</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>发件人地区</strong>
+                                    <span class="ui-label-detail-info-decs">Long Hua district</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>发件人街道</strong>
+                                    <span class="ui-label-detail-info-decs">Qibao town Ming road no. 555 on the 8th
+                                        floor 2 floor</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>发件人邮编</strong>
+                                    <span class="ui-label-detail-info-decs">021516286125</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>发件人签字</strong>
+                                    <span class="ui-label-detail-info-decs">Joe Wang</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="barcode" data-unresize="true"
+                                    data-styles="ui-label-barcode">
+                                    <strong><i class="fa fa-barcode f-ip" aria-hidden="true"></i>发件人邮编条码</strong>
+                                    <span class="ui-label-detail-info-decs">1223466412</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info " data-ele="recipient_address">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>综合信息</strong>
+                                    <span class="ui-label-detail-info-decs">
+                                        <span>Form:</span>
+                                        <span class="wms-person-name">Andrew Peachey&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="wms-person-street">12 Great Gill,Walmer
+                                            Bridge&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="wms-person-area">Preston Lancashire&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="wms-person-postcode">PR45QP&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="wms-person-country-en">United Kingdom<strong
+                                                class="wms-person-country-cn">(英国)&nbsp;&nbsp;&nbsp;&nbsp;</strong></span>
+                                        <span class="wms-person-tel1">07701070799&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="wms-person-tel2">13888888888&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span
+                                            class="wms-person-email">peachey2006@btinternet.com&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="ui-label-content-title"><i class="fa fa-chevron-down f-ip"
+                                aria-hidden="true"></i>收件人信息</span>
+                        <ul class="ui-label-content-menu">
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>收件人</strong>
+                                    <span class="ui-label-detail-info-decs">liu Ming</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>收件人电话</strong>
+                                    <span class="ui-label-detail-info-decs">13510228181</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>收件人手机</strong>
+                                    <span class="ui-label-detail-info-decs">13510228181</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>收件人邮件</strong>
+                                    <span class="ui-label-detail-info-decs">LuiMing168@163.com</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>收件人传真</strong>
+                                    <span class="ui-label-detail-info-decs">070-515635</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>收件人国家</strong>
+                                    <span class="ui-label-detail-info-decs">China</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>收件人国家英文缩写</strong>
+                                    <span class="ui-label-detail-info-decs">CN</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>收件人省份</strong>
+                                    <span class="ui-label-detail-info-decs">Shen zhen</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>收件人城市</strong>
+                                    <span class="ui-label-detail-info-decs">Shen zhen</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>收件人地区</strong>
+                                    <span class="ui-label-detail-info-decs">Long Hua district</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>收件人街道</strong>
+                                    <span class="ui-label-detail-info-decs">Qibao town Ming road no. 555 on the 8th
+                                        floor 2 floor</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>收件人邮编</strong>
+                                    <span class="ui-label-detail-info-decs">021516286125</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="barcode" data-unresize="true"
+                                    data-styles="ui-label-barcode">
+                                    <strong><i class="fa fa-barcode f-ip" aria-hidden="true"></i>收件人邮编条码</strong>
+                                    <span class="ui-label-detail-info-decs">1223466412</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info " data-ele="recipient_address">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>综合信息</strong>
+                                    <span class="ui-label-detail-info-decs">
+                                        <span>To:</span>
+                                        <span class="wms-person-name">Andrew Peachey&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="wms-person-street">12 Great Gill,Walmer
+                                            Bridge&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="wms-person-area">Preston Lancashire&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="wms-person-postcode">PR45QP&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="wms-person-country-en">United Kingdom<strong
+                                                class="wms-person-country-cn">(英国)&nbsp;&nbsp;&nbsp;&nbsp;</strong></span>
+                                        <span class="wms-person-tel1">07701070799&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="wms-person-tel2">13888888888&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span
+                                            class="wms-person-email">peachey2006@btinternet.com&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="ui-label-content-title"><i class="fa fa-chevron-down f-ip"
+                                aria-hidden="true"></i>产品信息</span>
+                        <ul class="ui-label-content-menu">
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>SKU编码</strong>
+                                    <span class="ui-label-detail-info-decs">PD170622000001</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="barcode" data-unresize="true"
+                                    data-styles="ui-label-barcode">
+                                    <strong><i class="fa fa-barcode f-ip" aria-hidden="true"></i>SKU条形码</strong>
+                                    <span class="ui-label-detail-info-decs">PD170622000001</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>中文标题</strong>
+                                    <span class="ui-label-detail-info-decs">产品AA</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>英文标题</strong>
+                                    <span class="ui-label-detail-info-decs">P_AA</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>单位</strong>
+                                    <span class="ui-label-detail-info-decs">EA</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>单位净重</strong>
+                                    <span class="ui-label-detail-info-decs">100</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>单位毛重</strong>
+                                    <span class="ui-label-detail-info-decs">100</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>总净重</strong>
+                                    <span class="ui-label-detail-info-decs">100</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>总毛重</strong>
+                                    <span class="ui-label-detail-info-decs">100</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>币种</strong>
+                                    <span class="ui-label-detail-info-decs">$</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>单价</strong>
+                                    <span class="ui-label-detail-info-decs">100</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>行总价</strong>
+                                    <span class="ui-label-detail-info-decs">500</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>订单总价</strong>
+                                    <span class="ui-label-detail-info-decs">500</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="table_hs" data-styles="ui-label-table-hs">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>综合汇总</strong>
+                                    <div class="ui-label-detail-info-decs">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:65%"><span>内件详细名称和数量 <br /> Quantity and detailed
+                                                            description of contents</span></th>
+                                                    <th><span>重量(千克)<br />Weight(kg)</span></th>
+                                                    <th><span>价值<br />(Value)</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width:65%">
+                                                        <span class="ui-overflow-text">
+                                                            <em class="wms-sku-name-cn">儿童用品</em>
+                                                            <em class="wms-sku-name-en">children products </em>
+                                                            <em class="wms-sku">A001</em>
+                                                            <em class="wms-sku-qty">x1</em>
+                                                        </span>
+                                                    </td>
+                                                    <td><span>55</span></td>
+                                                    <td><span>22</span></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td><span>协调系统税则号列和货物原产国(只对商品邮件填写)HS traiff number and country of
+                                                            origin of goods (For commercial items only)</span></td>
+                                                    <td><span>总重量 <br />Totle Weight</span></td>
+                                                    <td><span>总价值 <br />Totle Value</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>嘿嘿嘿*1 </span></td>
+                                                    <td><span>55</span></td>
+                                                    <td><span>22</span></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="ui-label-content-title"><i class="fa fa-chevron-down f-ip"
+                                aria-hidden="true"></i>物流信息</span>
+                        <ul class="ui-label-content-menu">
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>面单号</strong>
+                                    <span class="ui-label-detail-info-decs">PK1705100000115</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="barcode" data-unresize="true"
+                                    data-styles="ui-label-barcode">
+                                    <strong><i class="fa fa-barcode f-ip" aria-hidden="true"></i>面单号条码</strong>
+                                    <span class="ui-label-detail-info-decs">PK1705100000115</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>订单号</strong>
+                                    <span class="ui-label-detail-info-decs">SL1706230000004</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="barcode" data-unresize="true"
+                                    data-styles="ui-label-barcode">
+                                    <strong><i class="fa fa-barcode f-ip" aria-hidden="true"></i>订单号条码</strong>
+                                    <span class="ui-label-detail-info-decs">SL1706230000004</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-calendar f-ip" aria-hidden="true"></i>交易时间</strong>
+                                    <span class="ui-label-detail-info-decs">2017-06-23 19:16:19</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>是否含电池(是/否)</strong>
+                                    <span class="ui-label-detail-info-decs">是</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>是否含电池(Y/N)</strong>
+                                    <span class="ui-label-detail-info-decs">Y</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>是否带磁性(是/否)</strong>
+                                    <span class="ui-label-detail-info-decs">否</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="barcode" data-unresize="true"
+                                    data-styles="ui-label-barcode">
+                                    <strong><i class="fa fa-barcode f-ip" aria-hidden="true"></i>内部单号条码</strong>
+                                    <span class="ui-label-detail-info-decs">2016552152151282585</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="ui-label-content-title"><i class="fa fa-chevron-down f-ip"
+                                aria-hidden="true"></i>构图元素</span>
+                        <ul class="ui-label-content-menu">
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="line_x" data-styles="ui-label-line-x"
+                                    data-unresize="true">
+                                    <strong><i class="fa fa-arrows-h f-ip" aria-hidden="true"></i>水平线</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="line_y" data-styles="ui-label-line-y"
+                                    data-unresize="true">
+                                    <strong><i class="fa fa-arrows-v f-ip"
+                                            aria-hidden="true"></i>&nbsp;&nbsp;垂直线</strong>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="ui-label-content-title"><i class="fa fa-chevron-down f-ip"
+                                aria-hidden="true"></i>预设图片</span>
+                        <ul class="ui-label-content-menu">
+                            <li>
+                                <div class="ui-label-detail-info" data-img="true" data-ele="picture"
+                                    data-styles="ui-label-preview-img">
+                                    <img src="/front/assets/images/label_logo/logo15.jpg" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-img="true" data-ele="picture"
+                                    data-styles="ui-label-preview-img">
+                                    <img src="/front/assets/images/label_logo/logo4.jpg" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-img="true" data-ele="picture"
+                                    data-styles="ui-label-preview-img">
+                                    <img src="/front/assets/images/label_logo/logo8.jpg" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-img="true" data-ele="picture"
+                                    data-styles="ui-label-preview-img">
+                                    <img src="/front/assets/images/label_logo/logo14.jpg" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-img="true" data-ele="picture"
+                                    data-styles="ui-label-preview-img">
+                                    <img src="/front/assets/images/label_logo/logo28.jpg" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-img="true" data-ele="picture"
+                                    data-styles="ui-label-preview-img">
+                                    <img src="/front/assets/images/label/chinapost-1.jpg" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-img="true" data-ele="picture"
+                                    data-styles="ui-label-preview-img">
+                                    <img src="/front/assets/images/label/barcode.jpg" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-img="true" data-ele="picture"
+                                    data-styles="ui-label-preview-img">
+                                    <img src="/front/assets/images/label/barcode1.jpg" />
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="ui-label-content-title"><i class="fa fa-chevron-down f-ip"
+                                aria-hidden="true"></i>自定义元素</span>
+                        <ul class="ui-label-content-menu">
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="barcode" data-unresize="true"
+                                    data-styles="ui-label-barcode">
+                                    <strong><i class="fa fa-barcode f-ip" aria-hidden="true"></i>条形码</strong>
+                                    <span class="ui-label-detail-info-decs">00000000000000000000</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="local_img" data-styles="ui-label-local-img"
+                                    data-img="true">
+                                    <strong><i class="fa fa-picture-o f-ip" aria-hidden="true"></i>本地图片</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="text_custom"
+                                    data-styles="ui-label-normal-text">
+                                    <strong><i class="fa fa-align-left f-ip" aria-hidden="true"></i>自定文本</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="table_custom"
+                                    data-styles="ui-label-table-custom">
+                                    <strong><i class="fa fa-table f-ip" aria-hidden="true"></i>表格</strong>
+                                    <div class="ui-label-detail-info-decs">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th><span class="wms-thead-first">表头自定义</span></th>
+                                                    <th><span class="wms-thead-second">表头自定义</span></th>
+                                                    <th><span class="wms-thead-three">表头自定义</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="wms-tbody-row1-first">表格自定义</span></td>
+                                                    <td><span class="wms-tbody-row1-second">表格自定义</span></td>
+                                                    <td><span class="wms-tbody-row1-three">表格自定义</span></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td><span class="wms-tfoot-first">注脚自定义</span></td>
+                                                    <td><span class="wms-tfoot-second">注脚自定义</span></td>
+                                                    <td><span class="wms-tfoot-three">注脚自定义</span></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-ele="date">
+                                    <strong><i class="fa fa-calendar f-ip" aria-hidden="true"></i>打印日期</strong>
+                                    <span class="ui-label-detail-info-decs" data-divide="-"
+                                        data-timer="2017-06-26">2017-06-26</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>面单声明(1)</strong>
+                                    <span class="ui-label-detail-info-decs">I certify that the above declaration is
+                                        accurate, this letter is not installed or send legal postal and customs
+                                        regulations prohibit any dangerous goods delivery.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>面单声明(2)</strong>
+                                    <span class="ui-label-detail-info-decs">我保证上述申报准确无误，本函件内未装寄法律或邮政和海关规章禁止寄递的任何危险物品 I
+                                        certify that the above declaration is accurate, this letter is not installed or
+                                        send legal postal and customs regulations prohibit any dangerous goods
+                                        delivery.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info" data-styles="ui-label-check-mark">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>验收标记</strong>
+                                    <span class="ui-label-detail-info-decs">已验视</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>报关单</strong>
+                                    <span class="ui-label-detail-info-decs">CN22</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-label-detail-info">
+                                    <strong><i class="fa fa-list-alt f-ip" aria-hidden="true"></i>产地</strong>
+                                    <span class="ui-label-detail-info-decs">Made In China</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="ui-label-content-main">
+                <div class="ui-label-content-pannel">
+                    <div class="ui-label-content-area"></div>
+                </div>
+            </div>
+            <div class="ui-label-right-opration">
+                <p>平台店铺名称</p>
+                <div id="tabs" class="ui-label-tabs">
+                    <ul class="ui-label-tab-menu nav nav-tabs nav-justified">
+                        <li role="presentation"><a data-tab_id="tabs_title">标题</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_content">内容</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_comprehensive">综合</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_date">日期</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_font">字段</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_styles">样式</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_upload">上传</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_custom">自定义文本</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_barcode">条形码设置</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_table">表格</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_table_content">字段</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_table_custom">字段</a></li>
+                        <li role="presentation"><a data-tab_id="tabs_skuInfo">sku信息</a></li>
+
+                        <li role="presentation"><a data-tab_id="tabs_border">边框</a></li>
+                    </ul>
+                    <div class="ui-label-tab-item">
+                        <div id="tabs_title" class="ui-label-tab-content " data-type="tabs_title">
+                            <ul>
+                                <li class="row">
+                                    <label for="" class="col-md-12">
+                                        <input type="checkbox" class="wms-show-title">显示标题
+                                    </label>
+
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">标题文本:</p>
+                                    <label class="col-md-12" for="">
+                                        <input type="text" class="form-control wms-title-content">
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <label for="" class="col-md-12">
+                                        <input type="checkbox" class="wms-show-line">标题整行显示
+                                    </label>
+                                    <div class="clearFix wms-wrap-content">
+                                        <p class="col-md-12">标题对齐方式:</p>
+                                        <label class="col-md-12" for="">
+                                            <select class="form-control wms-text-align" data-style="text-align">
+                                                <option value="left">左对齐</option>
+                                                <option value="center">中对齐</option>
+                                                <option value="right">右对齐</option>
+                                            </select>
+                                        </label>
+                                        <p class="col-md-12">标题与内容间距:</p>
+                                        <label for="" class="col-md-12">
+                                            <select class="form-control wms-padding-bottom" data-style="padding-bottom">
+                                                <option value="0px">0px</option>
+                                                <option value="1px">1px</option>
+                                                <option value="2px">2px</option>
+                                                <option value="3px">3px</option>
+                                                <option value="4px">4px</option>
+                                                <option value="5px">5px</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">标题文字字体:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-font-family" data-style="font-family">
+                                            <option value="Arial">Arial</option>
+                                            <option value="Helvetica">Helvetica</option>
+                                            <option value="Tahoma">Tahoma</option>
+                                            <option value="Verdana">Verdana</option>
+                                            <option value="Lucida">Lucida Grande</option>
+                                            <option value="Times New Roman">Times New Roman</option>
+                                            <option value="Georgia">Georgia</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字尺寸:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-font-size" data-style="font-size">
+                                            <option value="6px">6px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="10px">10px</option>
+                                            <option value="12px">12px</option>
+                                            <option value="14px">14px</option>
+                                            <option value="16px">16px</option>
+                                            <option value="18px">18px</option>
+                                            <option value="24px">24px</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">标题文字行距:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-line-height" data-style="line-height">
+                                            <option value="1">1倍</option>
+                                            <option value="1.5">1.5倍</option>
+                                            <option value="2">2倍</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">标题文字加粗:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-font-weight" data-style="font-weight">
+                                            <option value="400">正常</option>
+                                            <option value="900">加粗</option>
+                                        </select>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_content" class="ui-label-tab-content " data-type="tabs_content">
+                            <ul>
+                                <li class="row">
+                                    <p class="col-md-12">内容文本:</p>
+                                    <label for="" class="col-md-12">
+                                        <input type="text" class="form-control wms-content-text">
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字对齐方式:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-text-align" data-style="text-align">
+                                            <option value="left">左对齐</option>
+                                            <option value="center">中对齐</option>
+                                            <option value="right">右对齐</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字字体:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-font-family" data-style="font-family">
+                                            <option value="Arial">Arial</option>
+                                            <option value="Helvetica">Helvetica</option>
+                                            <option value="Tahoma">Tahoma</option>
+                                            <option value="Verdana">Verdana</option>
+                                            <option value="Lucida">Lucida Grande</option>
+                                            <option value="Times New Roman">Times New Roman</option>
+                                            <option value="Georgia">Georgia</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字尺寸:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-font-size" data-style="font-size">
+                                            <option value="6px">6px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="10px">10px</option>
+                                            <option value="12px">12px</option>
+                                            <option value="14px">14px</option>
+                                            <option value="16px">16px</option>
+                                            <option value="18px">18px</option>
+                                            <option value="24px">24px</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字行距:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-line-height" data-style="line-height">
+                                            <option value="1">1倍</option>
+                                            <option value="1.5">1.5倍</option>
+                                            <option value="2">2倍</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字加粗:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control font-weight" data-style="font-weight">
+                                            <option value="400">正常</option>
+                                            <option value="900">加粗</option>
+                                        </select>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_comprehensive" class="ui-label-tab-content " data-type="tabs_comprehensive">
+                            <ul>
+                                <li class="row">
+                                    <p class="col-md-12">姓名内容:</p>
+                                    <label for="" class="col-md-12">
+                                        <input type="text" class="form-control wms-person-name"
+                                            data-text="wms-person-name">
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">街道内容:</p>
+                                    <label for="" class="col-md-12">
+                                        <textarea rows="4" cols="21" class="wms-person-street"
+                                            data-text="wms-person-street"></textarea>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">省份/城市/地区内容:</p>
+                                    <label for="" class="col-md-12">
+                                        <textarea rows="4" cols="21" class="wms-person-area"
+                                            data-text="wms-person-area"></textarea>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">邮编内容:</p>
+                                    <label for="" class="col-md-12">
+                                        <input type="text" class="form-control wms-person-postcode"
+                                            data-text="wms-person-postcode">
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">国家内容:</p>
+                                    <label for="" class="col-md-12">
+                                        <input type="text" class="form-control wms-person-country-en"
+                                            data-text="wms-person-country-en">
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">国家中文名内容:</p>
+                                    <label for="" class="col-md-12">
+                                        <input type="text" class="form-control wms-person-country-cn"
+                                            data-text="wms-person-country-cn">
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">电话1内容:</p>
+                                    <label for="" class="col-md-12">
+                                        <input type="text" class="form-control wms-person-tel1"
+                                            data-text="wms-person-tel1">
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">电话2内容:</p>
+                                    <label for="" class="col-md-12">
+                                        <input type="text" class="form-control wms-person-tel2"
+                                            data-text="wms-person-tel2">
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">E-mail内容:</p>
+                                    <label for="" class="col-md-12">
+                                        <textarea rows="4" cols="21" class="wms-person-email"
+                                            data-text="wms-person-email"></textarea>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字对齐方式:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-text-align" data-style="text-align">
+                                            <option value="left">左对齐</option>
+                                            <option value="center">中对齐</option>
+                                            <option value="right">右对齐</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字字体:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-font-family" data-style="font-family">
+                                            <option value="Arial">Arial</option>
+                                            <option value="Helvetica">Helvetica</option>
+                                            <option value="Tahoma">Tahoma</option>
+                                            <option value="Verdana">Verdana</option>
+                                            <option value="Lucida">Lucida Grande</option>
+                                            <option value="Times New Roman">Times New Roman</option>
+                                            <option value="Georgia">Georgia</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字尺寸:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-font-size" data-style="font-size">
+                                            <option value="6px">6px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="10px">10px</option>
+                                            <option value="12px">12px</option>
+                                            <option value="14px">14px</option>
+                                            <option value="16px">16px</option>
+                                            <option value="18px">18px</option>
+                                            <option value="24px">24px</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字行距:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-line-height" data-style="line-height">
+                                            <option value="1">1倍</option>
+                                            <option value="1.5">1.5倍</option>
+                                            <option value="2">2倍</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">内容文字加粗:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control font-weight" data-style="font-weight">
+                                            <option value="400">正常</option>
+                                            <option value="900">加粗</option>
+                                        </select>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_date" class="ui-label-tab-content " data-type="tabs_date">
+                            <ul>
+                                <li class="row">
+                                    <label for="" class="col-md-12">
+                                        <input type="checkbox" class="wms-show-year">显示年份
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">分割符号:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-date-format" data-style="date-format">
+                                            <option value="-">中横杆(-)</option>
+                                            <option value="/">斜杠(/)</option>
+                                            <option value=".">逗点(.)</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">日期文字对齐方式:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-text-align" data-style="text-align">
+                                            <option value="left">左对齐</option>
+                                            <option value="center">中对齐</option>
+                                            <option value="right">右对齐</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">日期文字字体:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-font-family" data-style="font-family">
+                                            <option value="Arial">Arial</option>
+                                            <option value="Helvetica">Helvetica</option>
+                                            <option value="Tahoma">Tahoma</option>
+                                            <option value="Verdana">Verdana</option>
+                                            <option value="Lucida">Lucida Grande</option>
+                                            <option value="Times New Roman">Times New Roman</option>
+                                            <option value="Georgia">Georgia</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">日期文字尺寸:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-font-size" data-style="font-size">
+                                            <option value="6px">6px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="10px">10px</option>
+                                            <option value="12px">12px</option>
+                                            <option value="14px">14px</option>
+                                            <option value="16px">16px</option>
+                                            <option value="18px">18px</option>
+                                            <option value="24px">24px</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">日期文字行距:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-line-height" data-style="line-height">
+                                            <option value="1">1倍</option>
+                                            <option value="1.5">1.5倍</option>
+                                            <option value="2">2倍</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">日期文字加粗:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-font-weight" data-style="font-weight">
+                                            <option value="400">正常</option>
+                                            <option value="900">加粗</option>
+                                        </select>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_font" class="ui-label-tab-content" data-type="tabs_font">
+                            <ul>
+                                <li class="row">
+                                    <span class="col-md-12">显示字段设置：</span>
+                                    <label class="col-md-12" for=""><input type="checkbox"
+                                            class="wms-person-name">显示姓名</label>
+                                    <label class="col-md-12" for=""><input type="checkbox"
+                                            class="wms-person-street">显示街道</label>
+                                    <label class="col-md-12" for=""><input type="checkbox"
+                                            class="wms-person-area">显示省份/城市/地区</label>
+                                    <label class="col-md-12" for=""><input type="checkbox"
+                                            class="wms-person-postcode">显示邮编</label>
+                                    <label class="col-md-12" for=""><input type="checkbox"
+                                            class="wms-person-country-en">显示国家</label>
+                                    <label class="col-md-12" for=""><input type="checkbox"
+                                            class="wms-person-country-cn">显示国家中文名</label>
+                                    <label class="col-md-12" for=""><input type="checkbox"
+                                            class="wms-person-tel1">显示电话1</label>
+                                    <label class="col-md-12" for=""><input type="checkbox"
+                                            class="wms-person-tel2">显示电话2</label>
+                                    <label class="col-md-12" for=""><input type="checkbox"
+                                            class="wms-person-email">显示E-mail</label>
+                                </li>
+                                <li>
+                                    <span>字段换行设置：</span>
+                                    <input type="checkbox" class="wms-person-inline-block">单字段换行
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_border" class="ui-label-tab-content" data-type="tabs_border">
+                            <ul>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        <input type="checkbox" class="wms-show-boder-top">显示上边框
+                                    </p>
+                                    <div class="col-md-6 ">
+                                        <span>上边框厚度:</span>
+                                        <select class="form-control wms-border-top-width" data-style="border-top-width">
+                                            <option value="0px">0px</option>
+                                            <option value="1px">1px</option>
+                                            <option value="2px">2px</option>
+                                            <option value="3px">3px</option>
+                                            <option value="4px">4px</option>
+                                            <option value="5px">5px</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <span>上边距:</span>
+                                        <select class="form-control wms-padding-top" data-style="padding-top">
+                                            <option value="0px">0px</option>
+                                            <option value="1px">1px</option>
+                                            <option value="2px">2px</option>
+                                            <option value="3px">3px</option>
+                                            <option value="4px">4px</option>
+                                            <option value="5px">5px</option>
+                                            <option value="6px">6px</option>
+                                            <option value="7px">7px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="9px">9px</option>
+                                            <option value="10px">10px</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        <input type="checkbox" class="wms-show-boder-bottom">显示下边框
+                                    </p>
+                                    <div class="col-md-6 ">
+                                        <span>下边框厚度:</span>
+                                        <select class="form-control wms-border-bottom-width"
+                                            data-style="border-bottom-width">
+                                            <option value="0px">0px</option>
+                                            <option value="1px">1px</option>
+                                            <option value="2px">2px</option>
+                                            <option value="3px">3px</option>
+                                            <option value="4px">4px</option>
+                                            <option value="5px">5px</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <span>下边距:</span>
+                                        <select class="form-control wms-padding-bottom" data-style="padding-bottom">
+                                            <option value="0px">0px</option>
+                                            <option value="1px">1px</option>
+                                            <option value="2px">2px</option>
+                                            <option value="3px">3px</option>
+                                            <option value="4px">4px</option>
+                                            <option value="5px">5px</option>
+                                            <option value="6px">6px</option>
+                                            <option value="7px">7px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="9px">9px</option>
+                                            <option value="10px">10px</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        <input type="checkbox" class="wms-show-boder-left">显示左边框
+                                    </p>
+                                    <div class="col-md-6 ">
+                                        <span>左边框厚度:</span>
+                                        <select class="form-control wms-border-left-width"
+                                            data-style="border-left-width">
+                                            <option value="0px">0px</option>
+                                            <option value="1px">1px</option>
+                                            <option value="2px">2px</option>
+                                            <option value="3px">3px</option>
+                                            <option value="4px">4px</option>
+                                            <option value="5px">5px</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <span>左边距:</span>
+                                        <select class="form-control wms-padding-left" data-style="padding-left">
+                                            <option value="0px">0px</option>
+                                            <option value="1px">1px</option>
+                                            <option value="2px">2px</option>
+                                            <option value="3px">3px</option>
+                                            <option value="4px">4px</option>
+                                            <option value="5px">5px</option>
+                                            <option value="6px">6px</option>
+                                            <option value="7px">7px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="9px">9px</option>
+                                            <option value="10px">10px</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        <input type="checkbox" class="wms-show-boder-right">显示右边框
+                                    </p>
+                                    <div class="col-md-6 ">
+                                        <span>右边框厚度:</span>
+                                        <select class="form-control wms-border-right-width"
+                                            data-style="border-right-width">
+                                            <option value="0px">0px</option>
+                                            <option value="1px">1px</option>
+                                            <option value="2px">2px</option>
+                                            <option value="3px">3px</option>
+                                            <option value="4px">4px</option>
+                                            <option value="5px">5px</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <span>右边距:</span>
+                                        <select class="form-control wms-padding-right" data-style="padding-right">
+                                            <option value="0px">0px</option>
+                                            <option value="1px">1px</option>
+                                            <option value="2px">2px</option>
+                                            <option value="3px">3px</option>
+                                            <option value="4px">4px</option>
+                                            <option value="5px">5px</option>
+                                            <option value="6px">6px</option>
+                                            <option value="7px">7px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="9px">9px</option>
+                                            <option value="10px">10px</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_styles" class="ui-label-tab-content tabs-styles" data-type="tabs_styles">
+                            <ul>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        线条宽度/高度(单位px):
+                                    </p>
+                                    <div class="col-md-12 ">
+                                        <input type="text" class="wms-styles-wh">
+                                        <button type="button" class="wms-styles-count">-</button>
+                                        <button type="button" class="wms-styles-plus">+</button>
+                                        <strong type="button" class="wms-styles-all">设置为100%</strong>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        线条类型:
+                                    </p>
+                                    <div class="col-md-12 ">
+                                        <select name="" id="" class="form-control wms-border-style"
+                                            data-style="border-style">
+                                            <option value="solid">实线</option>
+                                            <option value="dotted">点状线</option>
+                                            <option value="dashed">虚线</option>
+                                            <option value="double">双实线</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        线条粗细:
+                                    </p>
+                                    <div class="col-md-12 ">
+                                        <select name="" id="" class="form-control wms-border-width"
+                                            data-style="border-width">
+                                            <option value="1px">1px</option>
+                                            <option value="2px">2px</option>
+                                            <option value="3px">3px</option>
+                                            <option value="4px">4px</option>
+                                            <option value="5px">5px</option>
+                                            <option value="6px">6px</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_upload" class="ui-label-tab-content tabs-upload" data-type="tabs_upload">
+                            <ul>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        选择本地图片:
+                                    </p>
+                                    <div class="col-md-12 ui-label-provide-img">
+                                        <input type="file" id="localImg" name="localImg">
+                                        <input type="text" id="showLocalImgSrc" class="from-control">
+                                        <button type="button" class="btn btn-primary">浏览</button>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-md-12 ">
+                                        <img src="" alt="" id="previewImg" class="ui-label-preview-img">
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <div class="col-md-12 ui-label-preview-decs">
+                                        支持jpg、gif、png等图片格式，图片大小不得超过1MB
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_custom" class="ui-label-tab-content" data-type="tabs_custom">
+                            <ul>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        自定义文本:
+                                    </p>
+                                    <div class="col-md-12 ">
+                                        <textarea class="ui-label-custom-textarea double-bind" rows="4"
+                                            cols="27"></textarea>
+                                    </div>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">文本对齐方式:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-text-align" data-style="text-align">
+                                            <option value="left">左对齐</option>
+                                            <option value="center">中对齐</option>
+                                            <option value="right">右对齐</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">文本字体:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-font-family" data-style="font-family">
+                                            <option value="Arial">Arial</option>
+                                            <option value="Helvetica">Helvetica</option>
+                                            <option value="Tahoma">Tahoma</option>
+                                            <option value="Verdana">Verdana</option>
+                                            <option value="Lucida">Lucida Grande</option>
+                                            <option value="Times New Roman">Times New Roman</option>
+                                            <option value="Georgia">Georgia</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">文本文字尺寸:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-font-size" data-style="font-size">
+                                            <option value="6px">6px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="10px">10px</option>
+                                            <option value="12px">12px</option>
+                                            <option value="14px">14px</option>
+                                            <option value="16px">16px</option>
+                                            <option value="18px">18px</option>
+                                            <option value="24px">24px</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">文本文字行距:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-line-height" data-style="line-height">
+                                            <option value="1">1倍</option>
+                                            <option value="1.5">1.5倍</option>
+                                            <option value="2">2倍</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">文本文字加粗:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-font-weight" data-style="font-weight">
+                                            <option value="400">正常</option>
+                                            <option value="900">加粗</option>
+                                        </select>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_barcode" class="ui-label-tab-content" data-type="tabs_barcode">
+                            <ul>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        <input type="checkbox" checked class="wms-barcode">显示条形码:
+                                    </p>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">条形码文字对齐方式:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-text-align" data-style="text-align">
+                                            <option value="left">左对齐</option>
+                                            <option value="center">中对齐</option>
+                                            <option value="right">右对齐</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">条形码文本字体:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-font-size" data-style="font-size">
+                                            <option value="6px">6px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="10px">10px</option>
+                                            <option value="12px">12px</option>
+                                            <option value="14px">14px</option>
+                                            <option value="16px">16px</option>
+                                            <option value="18px">18px</option>
+                                            <option value="24px">24px</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">文本文字加粗:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-font-weight" data-style="font-weight">
+                                            <option value="400">正常</option>
+                                            <option value="900">加粗</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">条形码宽度:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-width" data-style="width">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">条形代码前缀:</p>
+                                    <label for="" class="col-md-12">
+                                        <input type="text" class="form-control ">
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_table" class="ui-label-tab-content" data-type="tabs_table">
+                            <ul>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        <input type="checkbox" class="wms-table-border">显示表格边框:
+                                    </p>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        <input type="checkbox" class="wms-table-header">显示表头:
+                                    </p>
+                                    <p class="col-md-12">表头文字字体:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-thead-font-family" data-style="font-family">
+                                            <option value="Arial">Arial</option>
+                                            <option value="Helvetica">Helvetica</option>
+                                            <option value="Tahoma">Tahoma</option>
+                                            <option value="Verdana">Verdana</option>
+                                            <option value="Lucida">Lucida Grande</option>
+                                            <option value="Times New Roman">Times New Roman</option>
+                                            <option value="Georgia">Georgia</option>
+                                        </select>
+                                    </label>
+                                    <p class="col-md-12">表头文字尺寸:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-thead-font-size" data-style="font-size">
+                                            <option value="6px">6px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="10px">10px</option>
+                                            <option value="12px">12px</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">表格文字字体:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-tbody-font-family" data-style="font-family">
+                                            <option value="Arial">Arial</option>
+                                            <option value="Helvetica">Helvetica</option>
+                                            <option value="Tahoma">Tahoma</option>
+                                            <option value="Verdana">Verdana</option>
+                                            <option value="Lucida">Lucida Grande</option>
+                                            <option value="Times New Roman">Times New Roman</option>
+                                            <option value="Georgia">Georgia</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">表格文字尺寸:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-tbody-font-size" data-style="font-size">
+                                            <option value="6px">6px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="10px">10px</option>
+                                            <option value="12px">12px</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        <input type="checkbox" class="wms-table-footer">显示注脚:
+                                    </p>
+                                    <p class="col-md-12">脚注文字字体:</p>
+                                    <label class="col-md-12" for="">
+                                        <select class="form-control wms-tfoot-font-family" data-style="font-family">
+                                            <option value="Arial">Arial</option>
+                                            <option value="Helvetica">Helvetica</option>
+                                            <option value="Tahoma">Tahoma</option>
+                                            <option value="Verdana">Verdana</option>
+                                            <option value="Lucida">Lucida Grande</option>
+                                            <option value="Times New Roman">Times New Roman</option>
+                                            <option value="Georgia">Georgia</option>
+                                        </select>
+                                    </label>
+                                    <p class="col-md-12">脚注文字尺寸:</p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-tfoot-font-size" data-style="font-size">
+                                            <option value="6px">6px</option>
+                                            <option value="8px">8px</option>
+                                            <option value="10px">10px</option>
+                                            <option value="12px">12px</option>
+                                        </select>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_table_content" class="ui-label-tab-content" data-type="tabs_table_content">
+                            <ul>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        表头文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-thead-decs"></textarea>
+                                    </p>
+
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        表格显示内容:
+                                    </p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-thead-name">
+                                            <option value="single">申报品名</option>
+                                        </select>
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        商品目录内容格式:
+                                    </p>
+                                    <label class="col-md-12">
+                                        <input type="checkbox" class="wms-sku-name-cn">显示申报中文名
+                                    </label>
+                                    <label class="col-md-12">
+                                        <input type="checkbox" class="wms-sku-name-en">显示申报英文名
+                                    </label>
+                                    <label class="col-md-12">
+                                        <input type="checkbox" class="wms-sku">商品sku
+                                    </label>
+                                    <label class="col-md-12">
+                                        <input type="checkbox" class="wms-sku-qty">商品数量
+                                    </label>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        重量表头文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-thead-weight"></textarea>
+                                    </p>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        价值表头文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-thead-price"></textarea>
+                                    </p>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        <input type="checkbox" class="wms-tfoot">显示脚注标题行:
+                                    </p>
+                                    <p class="col-md-12">
+                                        原产国表头文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-tfoot-decs"></textarea>
+                                    </p>
+                                    <p class="col-md-12">
+                                        总重量表头文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-tfoot-weight"></textarea>
+                                    </p>
+                                    <p class="col-md-12">
+                                        总价值表头文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-tfoot-price"></textarea>
+                                    </p>
+                                    <p class="col-md-12">
+                                        原产国缩写内容文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-tfoot-abbr"></textarea>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="tabs_table_custom" class="ui-label-tab-content" data-type="tabs_table_custom">
+                            <ul>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        插入&nbsp;&nbsp; <input type="text" class="ui-label-table-row wms-table-add-row"
+                                            name="" value="">行 <button class="wms-custom-table-add-del-row"
+                                            data-wms_type="add" type="button">确认</button>
+                                    </p>
+                                    <p class="col-md-12">
+                                        删除第<input type="text" class="ui-label-table-row wms-table-delet-row" name=""
+                                            value="">行 <button class="wms-custom-table-add-del-row" data-wms_type="del"
+                                            type="button">确认</button>
+                                    </p>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        表头单元格1文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" cols="23" rows="4" class="wms-thead-first"
+                                            data-text="wms-thead-first"></textarea>
+                                    </p>
+                                    <p class="col-md-12">
+                                        表头单元格2文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" cols="23" rows="4" class="wms-thead-second"
+                                            data-text="wms-thead-second"></textarea>
+                                    </p>
+                                    <p class="col-md-12">
+                                        表头单元格3文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" cols="23" rows="4" class="wms-thead-three"
+                                            data-text="wms-thead-three"></textarea>
+                                    </p>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        表格显示内容:
+                                    </p>
+                                    <label for="" class="col-md-12">
+                                        <select class="form-control wms-tbody-row">
+                                        </select>
+                                    </label>
+                                    <p class="col-md-12">
+                                        表格当前行单元格1文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-tbody-first"
+                                            data-text="wms-tbody-row1-first"></textarea>
+                                    </p>
+                                    <p class="col-md-12">
+                                        表格当前行单元格2文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-tbody-second"
+                                            data-text="wms-tbody-row1-second"></textarea>
+                                    </p>
+                                    <p class="col-md-12">
+                                        表格当前行单元格3文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-tbody-three"
+                                            data-text="wms-tbody-row1-three"></textarea>
+                                    </p>
+                                </li>
+                                <li class="row">
+                                    <p class="col-md-12">
+                                        注脚单元格1文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-tfoot-first"
+                                            data-text="wms-tfoot-first"></textarea>
+                                    </p>
+                                    <p class="col-md-12">
+                                        注脚单元格2文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-tfoot-second"
+                                            data-text="wms-tfoot-second"></textarea>
+                                    </p>
+                                    <p class="col-md-12">
+                                        注脚单元格3文字:
+                                    </p>
+                                    <p class="col-md-12">
+                                        <textarea name="" id="" cols="23" rows="4" class="wms-tfoot-three"
+                                            data-text="wms-tfoot-three"></textarea>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ui-label-tips">
+                        文字尺寸小于12px，在使用Google Chrome浏览器可能会出现显示异常，所以我们建议您使用Firefox或IE9以上版本浏览器执行标签打印
+                    </div>
+                    <div class="ui-label-tab-copy">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-copy" aria-hidden="true"></i>
+                            复制</button>
+                        <button type="button" class="btn btn-danger"><i class="fa fa-close" aria-hidden="true"></i>
+                            删除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aside class="ui-label-hotkey-panel">
+            <a class="ui-label-close-hotkey "><i class="fa fa-close" aria-hidden="true"></i></a>
+            <h3>快捷键</h3>
+            <ul>
+                <li><span class="ui-label-key"><i class="fa fa-arrow-up" aria-hidden="true"></i></span><strong
+                        class="ui-label-text-muted">上移</strong></li>
+                <li><span class="ui-label-key"><i class="fa fa-arrow-down" aria-hidden="true"></i></span><strong
+                        class="ui-label-text-muted">下移</strong></li>
+                <li><span class="ui-label-key"><i class="fa fa-arrow-left" aria-hidden="true"></i></span><strong
+                        class="ui-label-text-muted">左移</strong></li>
+                <li><span class="ui-label-key"><i class="fa fa-arrow-right" aria-hidden="true"></i></span><strong
+                        class="ui-label-text-muted">右移</strong></li>
+                <li><span class="ui-label-key">Delete</span>或<span class="ui-label-key">Del</span><strong
+                        class="ui-label-text-muted">删除</strong></li>
+            </ul>
+        </aside>
+    </div>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../node_modules/keymaster/keymaster.js"></script>
+<script src="./drag.js"></script>
+</body>
+</html>
