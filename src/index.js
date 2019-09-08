@@ -6,8 +6,6 @@ import "jquery-ui/ui/widgets/resizable";
 import "jquery-ui/ui/widgets/dialog";
 import CreatNewLabel from "./creatNewLabel";
 
-
-
 $(function() {
     new CreatNewLabel();
 });

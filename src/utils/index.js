@@ -60,8 +60,7 @@ export function utilBrowserType() {
                 userAgent.indexOf("MSIE") > -1 &&
                 !isOpera,
             isEdge =
-                userAgent.indexOf("Windows NT 6.1; Trident/7.0;") > -1 &&
-                !isIE,
+                userAgent.indexOf("Windows NT 6.1; Trident/7.0;") > -1 && !isIE,
             isFF = userAgent.indexOf("Firefox") > -1,
             isOpera = userAgent.indexOf("Opera") > -1,
             isSafari =

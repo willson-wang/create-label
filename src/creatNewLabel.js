@@ -39,7 +39,7 @@ class CreatNewLabel extends Base {
         this.eventsMap = {
             "click .ui-label-content-title": "menutitleclick", //左侧tab切换
             "click .ui-label-tab-menu": "menuTabclick", //右侧tab切换
-            "click": "pannelClick", //显示隐藏右侧菜单
+            click: "pannelClick", //显示隐藏右侧菜单
             "click .ui-lable-clearInnerHtml": "clearInnerHtml", //清空画布
             "click .ui-lable-printView": "printView", //打印预览
             "click .ui-lable-saveInnerHtml": "saveInnerHtml", //保存模板
@@ -137,11 +137,7 @@ class CreatNewLabel extends Base {
 
         $target.addClass("ui-title-active");
 
-        if (
-            $target
-                .next()
-                .hasClass("ui-menu-active")
-        ) {
+        if ($target.next().hasClass("ui-menu-active")) {
             $i.addClass("fa-chevron-down");
             $i.removeClass("fa-chevron-up");
         } else {
@@ -154,9 +150,7 @@ class CreatNewLabel extends Base {
             .siblings()
             .find("ul")
             .removeClass("ui-menu-active");
-        $target
-            .next()
-            .toggleClass("ui-menu-active");
+        $target.next().toggleClass("ui-menu-active");
     }
 
     menuTabclick(e) {
@@ -282,50 +276,50 @@ class CreatNewLabel extends Base {
             text = $(target).attr("data-text"); //判断文本内容类型
 
         switch (type) {
-        case "tabs_content": //
-            if (target.nodeName === "SELECT") {
-                this.currentEle.css(styles, target.value);
-                this._isTipsShow(target, styles);
-            } else {
-                this.currentEle.find("span").text(target.value);
-            }
-            break;
-        case "tabs_comprehensive": //综合
-            this._changeComprehensiveEleStyle(target, styles, text);
-            break;
-        case "tabs_border": //边框定义
-            this._changeBorderEleStyle(target, styles);
-            break;
-        case "tabs_custom": //自定义文本
-            if (target.nodeName === "SELECT") {
-                this.currentEle.css(styles, target.value);
-                this._isTipsShow(target, styles);
-            }
-            break;
-        case "tabs_table": //表格
-            this._changeTableHsEleStyle(target, styles);
-            break;
-        case "tabs_styles": //水平线与垂直线
-            this._changeLineXyEleStyle(target, styles);
-            break;
-        case "tabs_barcode": //条形码设置
-            this._changeBarcodeEleStyle(target, styles);
-            break;
-        case "tabs_font": //地址信息设置
-            this._changeFontEleStyle(target, styles);
-            break;
-        case "tabs_title": //标题信息设置
-            this._changeTitleEleStyle(target, styles);
-            break;
-        case "tabs_date": //日期信息设置
-            this._changeDateEleStyle(target, styles);
-            break;
-        case "tabs_table_content": //表格内容设置
-            this._changeTableContentEleStyle(target, styles);
-            break;
-        case "tabs_table_custom": //自定义表格内容设置
-            this._changeTableCustomEleStyle(target, styles, text);
-            break;
+            case "tabs_content": //
+                if (target.nodeName === "SELECT") {
+                    this.currentEle.css(styles, target.value);
+                    this._isTipsShow(target, styles);
+                } else {
+                    this.currentEle.find("span").text(target.value);
+                }
+                break;
+            case "tabs_comprehensive": //综合
+                this._changeComprehensiveEleStyle(target, styles, text);
+                break;
+            case "tabs_border": //边框定义
+                this._changeBorderEleStyle(target, styles);
+                break;
+            case "tabs_custom": //自定义文本
+                if (target.nodeName === "SELECT") {
+                    this.currentEle.css(styles, target.value);
+                    this._isTipsShow(target, styles);
+                }
+                break;
+            case "tabs_table": //表格
+                this._changeTableHsEleStyle(target, styles);
+                break;
+            case "tabs_styles": //水平线与垂直线
+                this._changeLineXyEleStyle(target, styles);
+                break;
+            case "tabs_barcode": //条形码设置
+                this._changeBarcodeEleStyle(target, styles);
+                break;
+            case "tabs_font": //地址信息设置
+                this._changeFontEleStyle(target, styles);
+                break;
+            case "tabs_title": //标题信息设置
+                this._changeTitleEleStyle(target, styles);
+                break;
+            case "tabs_date": //日期信息设置
+                this._changeDateEleStyle(target, styles);
+                break;
+            case "tabs_table_content": //表格内容设置
+                this._changeTableContentEleStyle(target, styles);
+                break;
+            case "tabs_table_custom": //自定义表格内容设置
+                this._changeTableCustomEleStyle(target, styles, text);
+                break;
         }
     }
 
@@ -339,30 +333,30 @@ class CreatNewLabel extends Base {
                 .prop("disabled", !$(target).prop("checked"))
                 .val("0px");
             switch (target.className) {
-            case "wms-show-boder-top":
-                this.currentEle.css({
-                    "border-top": "0 solid #000",
-                    "padding-top": "0",
-                });
-                break;
-            case "wms-show-boder-bottom":
-                this.currentEle.css({
-                    "border-bottom": "0 solid #000",
-                    "padding-bottom": "0",
-                });
-                break;
-            case "wms-show-boder-left":
-                this.currentEle.css({
-                    "border-left": "0 solid #000",
-                    "padding-left": "0",
-                });
-                break;
-            case "wms-show-boder-right":
-                this.currentEle.css({
-                    "border-right": "0 solid #000",
-                    "padding-right": "0",
-                });
-                break;
+                case "wms-show-boder-top":
+                    this.currentEle.css({
+                        "border-top": "0 solid #000",
+                        "padding-top": "0",
+                    });
+                    break;
+                case "wms-show-boder-bottom":
+                    this.currentEle.css({
+                        "border-bottom": "0 solid #000",
+                        "padding-bottom": "0",
+                    });
+                    break;
+                case "wms-show-boder-left":
+                    this.currentEle.css({
+                        "border-left": "0 solid #000",
+                        "padding-left": "0",
+                    });
+                    break;
+                case "wms-show-boder-right":
+                    this.currentEle.css({
+                        "border-right": "0 solid #000",
+                        "padding-right": "0",
+                    });
+                    break;
             }
         }
     }
@@ -430,65 +424,65 @@ class CreatNewLabel extends Base {
     _changeTableContentEleStyle(target) {
         if (target.nodeName === "INPUT") {
             switch (target.className) {
-            case "wms-sku-name-cn":
-                if ($(target).prop("checked")) {
-                    this.currentEle
-                        .find("tbody .wms-sku-name-cn")
-                        .css("display", "inline");
-                } else {
-                    this.currentEle
-                        .find("tbody .wms-sku-name-cn")
-                        .css("display", "none");
-                }
-                break;
-            case "wms-sku-name-en":
-                if ($(target).prop("checked")) {
-                    this.currentEle
-                        .find("tbody .wms-sku-name-en")
-                        .css("display", "inline");
-                } else {
-                    this.currentEle
-                        .find("tbody .wms-sku-name-en")
-                        .css("display", "none");
-                }
-                break;
-            case "wms-sku":
-                if ($(target).prop("checked")) {
-                    this.currentEle
-                        .find("tbody .wms-sku")
-                        .css("display", "inline");
-                } else {
-                    this.currentEle
-                        .find("tbody .wms-sku")
-                        .css("display", "none");
-                }
-                break;
-            case "wms-sku-qty":
-                if ($(target).prop("checked")) {
-                    this.currentEle
-                        .find("tbody .wms-sku-qty")
-                        .css("display", "inline");
-                } else {
-                    this.currentEle
-                        .find("tbody .wms-sku-qty")
-                        .css("display", "none");
-                }
-                break;
-            case "wms-tfoot":
-                if ($(target).prop("checked")) {
-                    this.currentEle
-                        .find("tfoot tr:first-of-type")
-                        .css("display", "");
-                } else {
-                    this.currentEle
-                        .find("tfoot tr:first-of-type")
-                        .css("display", "none");
-                }
-                $(target)
-                    .parents("li")
-                    .find("textarea")
-                    .prop("disabled", !$(target).prop("checked"));
-                break;
+                case "wms-sku-name-cn":
+                    if ($(target).prop("checked")) {
+                        this.currentEle
+                            .find("tbody .wms-sku-name-cn")
+                            .css("display", "inline");
+                    } else {
+                        this.currentEle
+                            .find("tbody .wms-sku-name-cn")
+                            .css("display", "none");
+                    }
+                    break;
+                case "wms-sku-name-en":
+                    if ($(target).prop("checked")) {
+                        this.currentEle
+                            .find("tbody .wms-sku-name-en")
+                            .css("display", "inline");
+                    } else {
+                        this.currentEle
+                            .find("tbody .wms-sku-name-en")
+                            .css("display", "none");
+                    }
+                    break;
+                case "wms-sku":
+                    if ($(target).prop("checked")) {
+                        this.currentEle
+                            .find("tbody .wms-sku")
+                            .css("display", "inline");
+                    } else {
+                        this.currentEle
+                            .find("tbody .wms-sku")
+                            .css("display", "none");
+                    }
+                    break;
+                case "wms-sku-qty":
+                    if ($(target).prop("checked")) {
+                        this.currentEle
+                            .find("tbody .wms-sku-qty")
+                            .css("display", "inline");
+                    } else {
+                        this.currentEle
+                            .find("tbody .wms-sku-qty")
+                            .css("display", "none");
+                    }
+                    break;
+                case "wms-tfoot":
+                    if ($(target).prop("checked")) {
+                        this.currentEle
+                            .find("tfoot tr:first-of-type")
+                            .css("display", "");
+                    } else {
+                        this.currentEle
+                            .find("tfoot tr:first-of-type")
+                            .css("display", "none");
+                    }
+                    $(target)
+                        .parents("li")
+                        .find("textarea")
+                        .prop("disabled", !$(target).prop("checked"));
+                    break;
             }
         }
     }
@@ -499,28 +493,28 @@ class CreatNewLabel extends Base {
             str = null;
         if (target.nodeName === "SELECT") {
             switch (styles) {
-            case "date-format":
-                // $span.text($span.text().replace(eval('/' + divide + ' / g '), target.value));
-                str = $span.text().replace(/[^0-9]/gi, "");
-                $span.text(
-                    str.substr(0, 4) +
+                case "date-format":
+                    // $span.text($span.text().replace(eval('/' + divide + ' / g '), target.value));
+                    str = $span.text().replace(/[^0-9]/gi, "");
+                    $span.text(
+                        str.substr(0, 4) +
                             target.value +
                             str.substr(4, 2) +
                             target.value +
                             str.substr(-2)
-                );
-                $span.attr("data-divide", target.value);
-                break;
-            case "text-align":
-                this.currentEle.css(styles, target.value);
-                break;
-            case "font-family":
-            case "font-size":
-            case "line-height":
-            case "font-weight":
-                $span.css(styles, target.value);
-                this._isTipsShow(target, styles);
-                break;
+                    );
+                    $span.attr("data-divide", target.value);
+                    break;
+                case "text-align":
+                    this.currentEle.css(styles, target.value);
+                    break;
+                case "font-family":
+                case "font-size":
+                case "line-height":
+                case "font-weight":
+                    $span.css(styles, target.value);
+                    this._isTipsShow(target, styles);
+                    break;
             }
         } else if (target.nodeName === "INPUT") {
             if ($(target).prop("checked")) {
@@ -538,67 +532,67 @@ class CreatNewLabel extends Base {
             this._isTipsShow(target, styles);
         } else if (target.nodeName === "INPUT") {
             switch (target.className) {
-            case "wms-show-title":
-                if ($(target).prop("checked")) {
-                    $strong.css("display", "inline");
-                } else {
-                    $strong.css("display", "none");
-                }
+                case "wms-show-title":
+                    if ($(target).prop("checked")) {
+                        $strong.css("display", "inline");
+                    } else {
+                        $strong.css("display", "none");
+                    }
 
-                this.tabsTitlePannelSlEle.prop(
-                    "disabled",
-                    !$(target).prop("checked")
-                );
-                this.tabsTitlePannelFfEle.prop(
-                    "disabled",
-                    !$(target).prop("checked")
-                );
-                this.tabsTitlePannelFsEle.prop(
-                    "disabled",
-                    !$(target).prop("checked")
-                );
-                this.tabsTitlePannelFwEle.prop(
-                    "disabled",
-                    !$(target).prop("checked")
-                );
-                this.tabsTitlePannelLhEle.prop(
-                    "disabled",
-                    !$(target).prop("checked")
-                );
-                this.tabsTitlePannelPbEle.prop(
-                    "disabled",
-                    !$(target).prop("checked")
-                );
-                this.tabsTitlePannelTaEle.prop(
-                    "disabled",
-                    !$(target).prop("checked")
-                );
-                this.tabsTitlePannelTcEle.prop(
-                    "disabled",
-                    !$(target).prop("checked")
-                );
+                    this.tabsTitlePannelSlEle.prop(
+                        "disabled",
+                        !$(target).prop("checked")
+                    );
+                    this.tabsTitlePannelFfEle.prop(
+                        "disabled",
+                        !$(target).prop("checked")
+                    );
+                    this.tabsTitlePannelFsEle.prop(
+                        "disabled",
+                        !$(target).prop("checked")
+                    );
+                    this.tabsTitlePannelFwEle.prop(
+                        "disabled",
+                        !$(target).prop("checked")
+                    );
+                    this.tabsTitlePannelLhEle.prop(
+                        "disabled",
+                        !$(target).prop("checked")
+                    );
+                    this.tabsTitlePannelPbEle.prop(
+                        "disabled",
+                        !$(target).prop("checked")
+                    );
+                    this.tabsTitlePannelTaEle.prop(
+                        "disabled",
+                        !$(target).prop("checked")
+                    );
+                    this.tabsTitlePannelTcEle.prop(
+                        "disabled",
+                        !$(target).prop("checked")
+                    );
 
-                break;
-            case "form-control wms-title-content":
-                $strong.text(target.value);
-                break;
-            case "wms-show-line":
-                if ($(target).prop("checked")) {
-                    this.tabsTitlePannelWcEle.css("display", "block");
-                    $strong.css("display", "block");
-                } else {
-                    this.tabsTitlePannelWcEle.css("display", "none");
-                    $strong.css("display", "inline");
-                }
-                this.tabsTitlePannelTaEle.prop(
-                    "disabled",
-                    !$(target).prop("checked")
-                );
-                this.tabsTitlePannelPbEle.prop(
-                    "disabled",
-                    !$(target).prop("checked")
-                );
-                break;
+                    break;
+                case "form-control wms-title-content":
+                    $strong.text(target.value);
+                    break;
+                case "wms-show-line":
+                    if ($(target).prop("checked")) {
+                        this.tabsTitlePannelWcEle.css("display", "block");
+                        $strong.css("display", "block");
+                    } else {
+                        this.tabsTitlePannelWcEle.css("display", "none");
+                        $strong.css("display", "inline");
+                    }
+                    this.tabsTitlePannelTaEle.prop(
+                        "disabled",
+                        !$(target).prop("checked")
+                    );
+                    this.tabsTitlePannelPbEle.prop(
+                        "disabled",
+                        !$(target).prop("checked")
+                    );
+                    break;
             }
         }
     }
@@ -678,21 +672,21 @@ class CreatNewLabel extends Base {
         if (target.nodeName === "SELECT") {
             //右对齐
             switch (styles) {
-            case "text-align":
-            case "font-size":
-            case "font-weight":
-                $barcodeHelp.css(styles, target.value);
-                break;
-            case "width":
-                activeBarcode.barWidth = target.value;
-                $barcode
-                    .empty()
-                    .barcode(barcodeNum, "code128", activeBarcode);
-                $barcode.attr(
-                    "data-barcodeopt",
-                    JSON.stringify(activeBarcode)
-                );
-                break;
+                case "text-align":
+                case "font-size":
+                case "font-weight":
+                    $barcodeHelp.css(styles, target.value);
+                    break;
+                case "width":
+                    activeBarcode.barWidth = target.value;
+                    $barcode
+                        .empty()
+                        .barcode(barcodeNum, "code128", activeBarcode);
+                    $barcode.attr(
+                        "data-barcodeopt",
+                        JSON.stringify(activeBarcode)
+                    );
+                    break;
             }
         } else if (target.nodeName === "INPUT") {
             if (target.type == "checkbox") {
@@ -934,27 +928,27 @@ class CreatNewLabel extends Base {
         clearTimeout(this.timer1);
         this.timer1 = setTimeout(function() {
             switch (target.className) {
-            case "wms-thead-decs":
-                $th1.text($(target).val());
-                break;
-            case "wms-thead-weight":
-                $th2.text($(target).val());
-                break;
-            case "wms-thead-price":
-                $th3.text($(target).val());
-                break;
-            case "wms-tfoot-decs":
-                $decs.text($(target).val());
-                break;
-            case "wms-tfoot-weight":
-                $totleWeight.text($(target).val());
-                break;
-            case "wms-tfoot-price":
-                $totlePrice.text($(target).val());
-                break;
-            case "wms-tfoot-abbr":
-                $contury.text($(target).val());
-                break;
+                case "wms-thead-decs":
+                    $th1.text($(target).val());
+                    break;
+                case "wms-thead-weight":
+                    $th2.text($(target).val());
+                    break;
+                case "wms-thead-price":
+                    $th3.text($(target).val());
+                    break;
+                case "wms-tfoot-decs":
+                    $decs.text($(target).val());
+                    break;
+                case "wms-tfoot-weight":
+                    $totleWeight.text($(target).val());
+                    break;
+                case "wms-tfoot-price":
+                    $totlePrice.text($(target).val());
+                    break;
+                case "wms-tfoot-abbr":
+                    $contury.text($(target).val());
+                    break;
             }
         }, 500);
     }
@@ -1148,84 +1142,84 @@ class CreatNewLabel extends Base {
             isAspectRatio = false;
         if (!isResize) {
             switch (type) {
-            case this.switchCfg.picture:
-            case this.switchCfg.localImg:
-                isAspectRatio =
+                case this.switchCfg.picture:
+                case this.switchCfg.localImg:
+                    isAspectRatio =
                         type === this.switchCfg.picture ? true : false;
-                ele.resizable({
-                    alsoResize: false,
-                    aspectRatio: isAspectRatio,
-                    autoHide: false,
-                    containment: "parent",
-                    stop: function() {
-                        // var widths = $(this).width(),
-                        //     heights = $(this).height();
-                        // $(this).find("img").css({ "width": "100%", "height": "100%" });
-                        $(this).css("lineHeight", $(this).css("height"));
-                    },
-                });
-                break;
-            case this.switchCfg.recipientAddress:
-                ele.resizable({
-                    alsoResize: false,
-                    aspectRatio: false,
-                    autoHide: true,
-                    containment: "parent",
-                    stop: function() {
-                        $(this)
-                            .find(".ui-text-info")
-                            .css({
+                    ele.resizable({
+                        alsoResize: false,
+                        aspectRatio: isAspectRatio,
+                        autoHide: false,
+                        containment: "parent",
+                        stop: function() {
+                            // var widths = $(this).width(),
+                            //     heights = $(this).height();
+                            // $(this).find("img").css({ "width": "100%", "height": "100%" });
+                            $(this).css("lineHeight", $(this).css("height"));
+                        },
+                    });
+                    break;
+                case this.switchCfg.recipientAddress:
+                    ele.resizable({
+                        alsoResize: false,
+                        aspectRatio: false,
+                        autoHide: true,
+                        containment: "parent",
+                        stop: function() {
+                            $(this)
+                                .find(".ui-text-info")
+                                .css({
+                                    width: $(this).width(),
+                                    height: $(this).height(),
+                                });
+                        },
+                    });
+                    break;
+                case this.switchCfg.tableHs:
+                case this.switchCfg.tableCustom:
+                    ele.resizable({
+                        aspectRatio: false,
+                        autoHide: true,
+                        minHeight: 103,
+                        minWidth: 122,
+                        grid: 31,
+                        containment: "parent",
+                        start: function(event, ui) {
+                            $th2 = ui.element.find("th:nth-of-type(2)");
+                            $th3 = ui.element.find("th:last-of-type");
+                            oldTh2Width = $th2.width();
+                            oldTh3Width = $th3.width();
+                        },
+                        resize: function() {
+                            $th2.css("width", oldTh2Width);
+                            $th3.css("width", oldTh3Width);
+                        },
+                        stop: function() {},
+                    });
+                    break;
+                case this.switchCfg.barcode:
+                    ele.resizable({
+                        aspectRatio: false,
+                        autoHide: true,
+                        containment: "parent",
+                        start: function() {},
+                        resize: function() {},
+                        stop: function() {
+                            ele.find(".wms-barcode").css({
                                 width: $(this).width(),
                                 height: $(this).height(),
                             });
-                    },
-                });
-                break;
-            case this.switchCfg.tableHs:
-            case this.switchCfg.tableCustom:
-                ele.resizable({
-                    aspectRatio: false,
-                    autoHide: true,
-                    minHeight: 103,
-                    minWidth: 122,
-                    grid: 31,
-                    containment: "parent",
-                    start: function(event, ui) {
-                        $th2 = ui.element.find("th:nth-of-type(2)");
-                        $th3 = ui.element.find("th:last-of-type");
-                        oldTh2Width = $th2.width();
-                        oldTh3Width = $th3.width();
-                    },
-                    resize: function() {
-                        $th2.css("width", oldTh2Width);
-                        $th3.css("width", oldTh3Width);
-                    },
-                    stop: function() {},
-                });
-                break;
-            case this.switchCfg.barcode:
-                ele.resizable({
-                    aspectRatio: false,
-                    autoHide: true,
-                    containment: "parent",
-                    start: function() {},
-                    resize: function() {},
-                    stop: function() {
-                        ele.find(".wms-barcode").css({
-                            width: $(this).width(),
-                            height: $(this).height(),
-                        });
-                    },
-                });
-                break;
-            default:
-                ele.resizable({
-                    aspectRatio: false,
-                    autoHide: true,
-                    containment: "parent",
-                    create: function() {},
-                    stop: function() {},
-                });
+                        },
+                    });
+                    break;
+                default:
+                    ele.resizable({
+                        aspectRatio: false,
+                        autoHide: true,
+                        containment: "parent",
+                        create: function() {},
+                        stop: function() {},
+                    });
             }
 
             ele.on("resize", function(e) {
@@ -1272,17 +1266,17 @@ class CreatNewLabel extends Base {
             requestObj.bill_type === "1" ? "地址单" : "配送单"
         );
         switch (requestObj.specs) {
-        case "1":
-            specsStr = "10*10";
-            break;
-        case "2":
-            specsStr = "10*5";
-            this.contentDivWrap.css("height", "5cm");
-            break;
-        case "3":
-            specsStr = "A4";
-            this.contentDivWrap.css({ height: "29.7cm", width: "21cm" });
-            break;
+            case "1":
+                specsStr = "10*10";
+                break;
+            case "2":
+                specsStr = "10*5";
+                this.contentDivWrap.css("height", "5cm");
+                break;
+            case "3":
+                specsStr = "A4";
+                this.contentDivWrap.css({ height: "29.7cm", width: "21cm" });
+                break;
         }
         this.spanSpecsEle.text(specsStr);
     }
@@ -1302,72 +1296,72 @@ class CreatNewLabel extends Base {
             strEle = null,
             str = "";
         switch (type) {
-        case this.switchCfg.lineX:
-            str = "<div></div>";
-            ele.css("left", 0);
-            break;
-        case this.switchCfg.lineY:
-            str = "<div></div>";
-            ele.css({ top: 0, left: left + 125 });
-            break;
-        case this.switchCfg.textCustom: //自定义文本
-            str = "<span>自定义文本</span>";
-            break;
-        case this.switchCfg.localImg: //本地图片
-            str =
+            case this.switchCfg.lineX:
+                str = "<div></div>";
+                ele.css("left", 0);
+                break;
+            case this.switchCfg.lineY:
+                str = "<div></div>";
+                ele.css({ top: 0, left: left + 125 });
+                break;
+            case this.switchCfg.textCustom: //自定义文本
+                str = "<span>自定义文本</span>";
+                break;
+            case this.switchCfg.localImg: //本地图片
+                str =
                     "<img src='/front/assets/images/label/photo_default.jpg'></img>";
-            ele.css({ left: left + 105 });
-            break;
-        case this.switchCfg.tableHs: //表格
-        case this.switchCfg.tableCustom: //表格
-            str = $(html).find("table");
-            ele.css({ left: 0 });
-            break;
-        case this.switchCfg.barcode: //条形码
-            // $img = $("<img></img>");
-            // // barcodeNum = $(html).text().replace(/[^0-9]/ig, "");
-            // console.log($(html).length);
-            // barcodeNum = $(html).eq($(html).length - 1).text();
-            // this.defaultBarcode.text = barcodeNum;
-            // $img.attr({ "data-barcodeNum": barcodeNum, "data-barcodeOpt": JSON.stringify(this.defaultBarcode) });
-            // $img.JsBarcode(barcodeNum, this.defaultBarcode);
-            // str = $img;
-            $div = $("<div></div>");
-            $div1 = $("<div class='wms-barcode'></div>");
-            barcodeNum = $(html)
-                .eq($(html).length - 1)
-                .text();
-            $div2 = $(
-                "<div class='wms-barcode-helper ui-barcode-helper'>" +
+                ele.css({ left: left + 105 });
+                break;
+            case this.switchCfg.tableHs: //表格
+            case this.switchCfg.tableCustom: //表格
+                str = $(html).find("table");
+                ele.css({ left: 0 });
+                break;
+            case this.switchCfg.barcode: //条形码
+                // $img = $("<img></img>");
+                // // barcodeNum = $(html).text().replace(/[^0-9]/ig, "");
+                // console.log($(html).length);
+                // barcodeNum = $(html).eq($(html).length - 1).text();
+                // this.defaultBarcode.text = barcodeNum;
+                // $img.attr({ "data-barcodeNum": barcodeNum, "data-barcodeOpt": JSON.stringify(this.defaultBarcode) });
+                // $img.JsBarcode(barcodeNum, this.defaultBarcode);
+                // str = $img;
+                $div = $("<div></div>");
+                $div1 = $("<div class='wms-barcode'></div>");
+                barcodeNum = $(html)
+                    .eq($(html).length - 1)
+                    .text();
+                $div2 = $(
+                    "<div class='wms-barcode-helper ui-barcode-helper'>" +
                         barcodeNum +
                         "</div>"
-            );
-            this.defaultBarcode.text = barcodeNum;
-            $div1.attr({
-                "data-barcodeNum": barcodeNum,
-                "data-barcodeOpt": JSON.stringify(this.defaultBarcode),
-            });
-            $($div1).barcode(barcodeNum, "code128", this.defaultBarcode);
-            $div1.appendTo($div);
-            $div2.appendTo($div);
-            str = $div.html();
-            break;
-        case this.switchCfg.recipientAddress: //地址
-            $div = $("<div class='ui-text-info'></div>");
-            $(html)
-                .find("span")
-                .appendTo($div);
-            str = $div;
-            break;
-        default:
-            //普通信息、日期
-            strEle = $(html);
-            strEle
-                .eq(0)
-                .find("i")
-                .remove();
-            str = strEle;
-            this.switchCfgTitle.normalInfo = strEle.eq(0).text(); //获取标题的内容
+                );
+                this.defaultBarcode.text = barcodeNum;
+                $div1.attr({
+                    "data-barcodeNum": barcodeNum,
+                    "data-barcodeOpt": JSON.stringify(this.defaultBarcode),
+                });
+                $($div1).barcode(barcodeNum, "code128", this.defaultBarcode);
+                $div1.appendTo($div);
+                $div2.appendTo($div);
+                str = $div.html();
+                break;
+            case this.switchCfg.recipientAddress: //地址
+                $div = $("<div class='ui-text-info'></div>");
+                $(html)
+                    .find("span")
+                    .appendTo($div);
+                str = $div;
+                break;
+            default:
+                //普通信息、日期
+                strEle = $(html);
+                strEle
+                    .eq(0)
+                    .find("i")
+                    .remove();
+                str = strEle;
+                this.switchCfgTitle.normalInfo = strEle.eq(0).text(); //获取标题的内容
         }
         return str;
     }
@@ -1375,110 +1369,110 @@ class CreatNewLabel extends Base {
     _swichRightMenu(type) {
         var arr = [];
         switch (type) {
-        case this.switchCfg.lineX:
-            arr = ["tabs_styles"];
-            this.menuTabContentTitle.text(this.switchCfgTitle.lineX);
-            break;
-        case this.switchCfg.lineY:
-            arr = ["tabs_styles"];
-            this.menuTabContentTitle.text(this.switchCfgTitle.lineY);
-            break;
-        case this.switchCfg.textCustom:
-            arr = ["tabs_custom", "tabs_border"];
-            this.menuTabContentTitle.text(this.switchCfgTitle.textCustom);
-            $(".ui-label-custom-textarea").val(
-                this.currentEle.find("span").text()
-            );
-            break;
-        case this.switchCfg.localImg:
-            arr = ["tabs_upload", "tabs_border"];
-            this.menuTabContentTitle.text(this.switchCfgTitle.localImg);
-            this.previewImg.attr(
-                "src",
-                this.currentEle.find("img").attr("src")
-            );
-            this.showLocalImgSrc.val(
-                this.currentEle.find("img").attr("src")
-            );
-            break;
-        case this.switchCfg.barcode:
-            arr = ["tabs_barcode"];
-            this.menuTabContentTitle.text(this.switchCfgTitle.barcode);
-            break;
-        case this.switchCfg.tableHs:
-            arr = ["tabs_table", "tabs_table_content"];
-            this.menuTabContentTitle.text(this.switchCfgTitle.tableHs);
-            break;
-        case this.switchCfg.tableCustom:
-            arr = ["tabs_table", "tabs_table_custom"];
-            this.menuTabContentTitle.text(this.switchCfgTitle.tableHs);
-            break;
-        case this.switchCfg.recipientAddress:
-            arr = ["tabs_comprehensive", "tabs_font", "tabs_border"];
-            this.menuTabContentTitle.text(
-                this.switchCfgTitle.recipientAddress
-            );
-            break;
-        case this.switchCfg.date:
-            arr = ["tabs_title", "tabs_date", "tabs_border"];
-            this.menuTabContentTitle.text(this.switchCfgTitle.date);
-            break;
-        case this.switchCfg.picture:
-            arr = ["tabs_border"];
-            this.menuTabContentTitle.text(this.switchCfgTitle.picture);
-            break;
-        default:
-            arr = ["tabs_title", "tabs_content", "tabs_border"];
-            this.switchCfgTitle.normalInfo = this.currentEle
-                .find("strong")
-                .text();
-            this.menuTabContentTitle.text(this.switchCfgTitle.normalInfo);
-            break;
+            case this.switchCfg.lineX:
+                arr = ["tabs_styles"];
+                this.menuTabContentTitle.text(this.switchCfgTitle.lineX);
+                break;
+            case this.switchCfg.lineY:
+                arr = ["tabs_styles"];
+                this.menuTabContentTitle.text(this.switchCfgTitle.lineY);
+                break;
+            case this.switchCfg.textCustom:
+                arr = ["tabs_custom", "tabs_border"];
+                this.menuTabContentTitle.text(this.switchCfgTitle.textCustom);
+                $(".ui-label-custom-textarea").val(
+                    this.currentEle.find("span").text()
+                );
+                break;
+            case this.switchCfg.localImg:
+                arr = ["tabs_upload", "tabs_border"];
+                this.menuTabContentTitle.text(this.switchCfgTitle.localImg);
+                this.previewImg.attr(
+                    "src",
+                    this.currentEle.find("img").attr("src")
+                );
+                this.showLocalImgSrc.val(
+                    this.currentEle.find("img").attr("src")
+                );
+                break;
+            case this.switchCfg.barcode:
+                arr = ["tabs_barcode"];
+                this.menuTabContentTitle.text(this.switchCfgTitle.barcode);
+                break;
+            case this.switchCfg.tableHs:
+                arr = ["tabs_table", "tabs_table_content"];
+                this.menuTabContentTitle.text(this.switchCfgTitle.tableHs);
+                break;
+            case this.switchCfg.tableCustom:
+                arr = ["tabs_table", "tabs_table_custom"];
+                this.menuTabContentTitle.text(this.switchCfgTitle.tableHs);
+                break;
+            case this.switchCfg.recipientAddress:
+                arr = ["tabs_comprehensive", "tabs_font", "tabs_border"];
+                this.menuTabContentTitle.text(
+                    this.switchCfgTitle.recipientAddress
+                );
+                break;
+            case this.switchCfg.date:
+                arr = ["tabs_title", "tabs_date", "tabs_border"];
+                this.menuTabContentTitle.text(this.switchCfgTitle.date);
+                break;
+            case this.switchCfg.picture:
+                arr = ["tabs_border"];
+                this.menuTabContentTitle.text(this.switchCfgTitle.picture);
+                break;
+            default:
+                arr = ["tabs_title", "tabs_content", "tabs_border"];
+                this.switchCfgTitle.normalInfo = this.currentEle
+                    .find("strong")
+                    .text();
+                this.menuTabContentTitle.text(this.switchCfgTitle.normalInfo);
+                break;
         }
         this._rightMenuContentShow(arr);
     }
 
     _showDefalutValue(type) {
         switch (type) {
-        case this.switchCfg.lineX:
-        case this.switchCfg.lineY:
-            this._showTabsStylesDefalutValue(type);
-            break;
-        case this.switchCfg.textCustom:
-            this._showTabsCustomDefalutValue();
-            this._showTabsBorderDefalutValue();
-            break;
-        case this.switchCfg.localImg:
-            break;
-        case this.switchCfg.barcode:
-            this._showTabsBarcodeDefalutValue();
-            break;
-        case this.switchCfg.tableHs:
-            this._showTabsTableHsDefalutValue();
-            this._showTabsTableHsContentDefalutValue();
-            break;
-        case this.switchCfg.tableCustom:
-            this._showTabsTableHsDefalutValue();
-            this._showTabsTableCustomContentDefalutValue();
-            break;
-        case this.switchCfg.recipientAddress:
-            this._showTabsComprehensiveDefalutValue();
-            this._showTabsFontDefalutValue();
-            this._showTabsBorderDefalutValue();
-            break;
-        case this.switchCfg.date:
-            this._showTabsTitleDefalutValue();
-            this._showTabsDateDefalutValue();
-            this._showTabsBorderDefalutValue();
-            break;
-        case this.switchCfg.pictrue:
-            this._showTabsBorderDefalutValue();
-            break;
-        default:
-            this._showTabsTitleDefalutValue();
-            this._showTabsContentDefalutValue();
-            this._showTabsBorderDefalutValue();
-            break;
+            case this.switchCfg.lineX:
+            case this.switchCfg.lineY:
+                this._showTabsStylesDefalutValue(type);
+                break;
+            case this.switchCfg.textCustom:
+                this._showTabsCustomDefalutValue();
+                this._showTabsBorderDefalutValue();
+                break;
+            case this.switchCfg.localImg:
+                break;
+            case this.switchCfg.barcode:
+                this._showTabsBarcodeDefalutValue();
+                break;
+            case this.switchCfg.tableHs:
+                this._showTabsTableHsDefalutValue();
+                this._showTabsTableHsContentDefalutValue();
+                break;
+            case this.switchCfg.tableCustom:
+                this._showTabsTableHsDefalutValue();
+                this._showTabsTableCustomContentDefalutValue();
+                break;
+            case this.switchCfg.recipientAddress:
+                this._showTabsComprehensiveDefalutValue();
+                this._showTabsFontDefalutValue();
+                this._showTabsBorderDefalutValue();
+                break;
+            case this.switchCfg.date:
+                this._showTabsTitleDefalutValue();
+                this._showTabsDateDefalutValue();
+                this._showTabsBorderDefalutValue();
+                break;
+            case this.switchCfg.pictrue:
+                this._showTabsBorderDefalutValue();
+                break;
+            default:
+                this._showTabsTitleDefalutValue();
+                this._showTabsContentDefalutValue();
+                this._showTabsBorderDefalutValue();
+                break;
         }
     }
 
@@ -1732,7 +1726,8 @@ class CreatNewLabel extends Base {
             $postcode = this.currentEle.find(".wms-person-postcode"),
             $street = this.currentEle.find(".wms-person-street"),
             $tel1 = this.currentEle.find(".wms-person-tel1"),
-            $tel2 = this.currentEle.find(".wms-person-tel");
+            $tel2 = this.currentEle.find(".wms-person-tel"),
+            tempText = null;
 
         this.tabsContentPannelFfEle.val(this.currentEle.css("font-family"));
         this.tabsContentPannelFsEle.val(this.currentEle.css("font-size"));
@@ -1749,16 +1744,17 @@ class CreatNewLabel extends Base {
         this.tabsComprehensivePannelCccEle.val(
             $conturyCn.css("display") !== "none" ? $conturyCn.text() : ""
         );
-        this.tabsComprehensivePannelCceEle.val(
-            $conturyEn.css("display") !== "none"
-                ? $conturyEn
-                    .clone()
-                    .find("strong")
-                    .remove()
-                    .end()
-                    .text()
-                : ""
-        );
+        if ($conturyEn.css("display") !== "none") {
+            tempText = $conturyEn
+                .clone()
+                .find("strong")
+                .remove()
+                .end()
+                .text();
+        } else {
+            tempText = "";
+        }
+        this.tabsComprehensivePannelCceEle.val(tempText);
         this.tabsComprehensivePannelCeEle.val(
             $email.css("display") !== "none" ? $email.text() : ""
         );
